@@ -4,19 +4,14 @@ import ViewMore from '@/components/ReusuableComponents/ViewMore'
 
 const TopCategories = () => {
     return (
-        <div className='container h-svh text-center'>
+        <div className='container text-center'>
             <h1 className='text-3xl mt-6 mb-4 md:mt-12'>Top Categories</h1>
             <h2>Discover the Latest Trends</h2>
 
             <div className='mt-6 md:mt-12'>
                 <TopCategoryItems />
             </div>
-
             <ViewMore url='categories' styles='float-center' />
-
-
-
-
         </div>
     )
 }
