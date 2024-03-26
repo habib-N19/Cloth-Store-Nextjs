@@ -3,6 +3,7 @@ import FlashSaleCarousel from './FlashSaleCarousel'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ArrowBottomRightIcon, ChevronRightIcon } from '@radix-ui/react-icons'
+import ViewMore from '@/components/ReusuableComponents/ViewMore'
 
 const FlashSaleSection = () => {
     return (
@@ -13,7 +14,7 @@ const FlashSaleSection = () => {
             <div className='mt-6 md:mt-12'>
                 <FlashSaleCarousel />
             </div>
-            <Button className='mt-6 md:mt-12 float-right'><Link className='inline-flex items-center' href='/flash-sale'>View All<ChevronRightIcon /> </Link></Button>
+            <ViewMore url='flash-sale' styles='float-right' />
 
         </section>
     )
