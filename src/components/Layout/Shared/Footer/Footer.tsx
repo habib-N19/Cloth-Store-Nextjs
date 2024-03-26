@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='min-h-[40vh] mt-12 border container '>
+        <footer className='min-h-[40vh] mt-12 border divide-y container '>
             {/* top footer */}
-            <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mt-6 md:mt-12'>
+            <div className='grid grid-cols-1 justify-between  md:grid-cols-4 gap-2 border my-6 md:mt-12  p-4 '>
                 <div className='col-span-1'>
                     <h1 className='text-2xl font-bold'>About Us</h1>
                     <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
@@ -41,8 +41,8 @@ const Footer = () => {
                 </div>
             </div>
             {/* bottom footer */}
-            <div className='divide-solid'></div>
-            <div className='mt-6 md:mt-12'>
+            {/* <div className='divide-solid'></div> */}
+            <div className='pt-6'>
                 <p className='text-center'>© 2021 All Rights Reserved. Designed by <span className='text-blue-500'>ABC</span></p>
             </div>
 
