@@ -1,4 +1,3 @@
-import Footer from "@/components/Layout/Shared/Footer/Footer"
 import RootLayout from "@/components/Layout/Shared/RootLayout/RootLayout"
 import Sidebar from "@/components/Layout/Shared/Sidebar/Sidebar"
 
@@ -10,7 +9,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
                  border">
                     <Sidebar />
                 </div>
-                <div className="col-auto">
+                <div className="col-span-8">
 
                     {children}
                 </div>
