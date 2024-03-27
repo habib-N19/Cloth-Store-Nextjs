@@ -1,11 +1,10 @@
+import type { Config } from "tailwindcss";
 const {
 	default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
+	darkMode: ["class"],
 	content: [
-		// your paths
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
@@ -13,9 +12,8 @@ module.exports = {
 		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{js,ts,jsx,tsx,mdx}",
 	],
-	darkMode: "class",
 	prefix: "",
 	theme: {
 		container: {
@@ -66,11 +64,6 @@ module.exports = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
-			animation: {
-				"accordion-down": "accordion-down 0.2s ease-out",
-				"accordion-up": "accordion-up 0.2s ease-out",
-				aurora: "aurora 60s linear infinite",
-			},
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },
@@ -89,12 +82,17 @@ module.exports = {
 					},
 				},
 			},
+			animation: {
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				aurora: "aurora 60s linear infinite",
+			},
 		},
 	},
-	plugins: [addVariablesForColors, require("tailwindcss-animate")],
-};
+	plugins: [require("tailwindcss-animate"), addVariablesForColors],
+} satisfies Config;
 
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+export default config;
 function addVariablesForColors({ addBase, theme }: any) {
 	let allColors = flattenColorPalette(theme("colors"));
 	let newVars = Object.fromEntries(
