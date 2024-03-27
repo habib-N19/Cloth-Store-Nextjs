@@ -1,5 +1,6 @@
 "use client";
 
+import ProductCard from "@/components/ReUsableComponents/ProductCard";
 import { Tabs } from "@/components/ui/tabs";
 import Image from "next/image";
 
@@ -11,7 +12,7 @@ export function MostPopularItemsTab() {
             content: (
                 <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
                     <p>Product Tab</p>
-                    <DummyContent />
+                    <ProductCard></ProductCard>
                 </div>
             ),
         },

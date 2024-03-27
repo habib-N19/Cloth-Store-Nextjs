@@ -7,6 +7,10 @@ import {
     IconTableColumn,
 } from "@tabler/icons-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { CardContent } from "@/components/ui/card";
 
 export function TopCategoryItems() {
     return (
@@ -25,7 +29,24 @@ export function TopCategoryItems() {
     );
 }
 const Skeleton = () => (
-    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   border border-transparent dark:border-white/[0.2] ">
+        <CardContent className=" aspect-square relative p-0">
+            <Link href='/' className="w-full">
+                <Image
+                    className="h-fit rounded"
+                    src='https://i.ibb.co/HCzcDs2/image.png'
+                    alt='img'
+                    height={200}
+                    width={400}
+                />
+            </Link>
+
+            <Badge className="absolute top-0 left-0">
+                39% OFF
+            </Badge>
+
+        </CardContent>
+    </div>
 );
 const items = [
     {

@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="dark">
-            <body className={[inter.className, 'relative'].join(' ')}>
+            <body className={inter.className}>
                 {children}
                 <Footer />
                 <Toaster />
