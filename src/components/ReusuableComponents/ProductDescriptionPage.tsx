@@ -7,7 +7,7 @@ const ProductDescriptionComponent = () => {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
             <div className="flex flex-col md:flex-row -mx-4">
-                <div className="md:flex-1 px-4">
+                {/* <div className="md:flex-1 px-4">
                     <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
                         <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
                             <span className="text-5xl">{image}</span>
@@ -26,8 +26,8 @@ const ProductDescriptionComponent = () => {
                             </div>
                         ))}
                     </div>
-                </div>
-                <div className="md:flex-1 px-4">
+                </div> */}
+                {/* <div className="md:flex-1 px-4">
                     <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>
                     <p className="text-gray-500 text-sm">By <a href="#" className="text-indigo-600 hover:underline">ABC Company</a></p>
                     <div className="flex items-center space-x-4 my-4">
@@ -59,7 +59,7 @@ const ProductDescriptionComponent = () => {
                             Add to Cart
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

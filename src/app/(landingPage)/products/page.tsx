@@ -1,3 +1,5 @@
+import { ProductCategory } from "@/components/Layout/Products/ProductCategory";
+import ProductFilter from "@/components/Layout/Products/ProductFilter";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import React from "react";
 
@@ -6,14 +8,9 @@ const ProductsPage = () => {
         <section className="container grid grid-cols-5">
             {/* filter section */}
             <div className="col-span-1">
-                <Card>
-                    <CardTitle className="border-l-2 pl-2 text-xl font-bold">Price Range</CardTitle>
-                    <CardContent>
-                        <div className="flex justify-between">
-                            {/* TODO: shacdn checkbox with zod here */}
-                        </div>
-                    </CardContent>
-                </Card>
+                <ProductFilter />
+                <ProductCategory />
+                <ProductFilter />
             </div>
             {/* all products section */}
             <div className="col-span-4 p-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
