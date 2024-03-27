@@ -1,6 +1,6 @@
 import React from 'react'
 import { TopCategoryItems } from './TopCategoryItems'
-import ViewMore from '@/components/ReusuableComponents/ViewMore'
+import ViewMore from '@/components/ReUsableComponents/ViewMore'
 
 const TopCategories = () => {
     return (

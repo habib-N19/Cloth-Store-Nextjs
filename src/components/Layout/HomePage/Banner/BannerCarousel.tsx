@@ -4,7 +4,7 @@ import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import BannerCards from "./BannerCards"
-import ProductCard from "@/components/ReusuableComponents/ProductCard"
+import ProductCard from "@/components/ReUsableComponents/ProductCard"
 
 
 const BannerCarousel = () => {
