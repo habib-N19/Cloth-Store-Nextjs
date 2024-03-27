@@ -9,7 +9,6 @@ const HomePage = () => {
         <>
             <Banner />
             <FlashSaleSection />
-
             <TopCategories />
             <MostPopularProduct />
         </>

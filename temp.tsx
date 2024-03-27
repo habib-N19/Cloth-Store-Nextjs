@@ -1,66 +1,42 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
-import { JSX, SVGProps } from "react"
-
+import Image from "next/image"
 
 export default function Component() {
     return (
-        <div className="flex items-center justify-between px-4 py-2 bg-white dark:bg-gray-800">
-            <Link className="flex items-center gap-2" href="#">
-                <MountainIcon className="h-6 w-6" />
-                <span className="text-lg font-semibold">Acme Inc</span>
+        <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+            <Link className="relative mx-3 mt-3 h-60 overflow-hidden rounded-xl block" href="#">
+                <Image alt="product image" className="object-cover" src="/placeholder.svg" />
+                <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+                    39% OFF
+                </span>
             </Link>
-            <div className="hidden md:flex gap-4">
-                <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                    Home
+            <div className="mt-4 px-5 pb-5">
+                <Link href="#">
+                    <h5 className="text-xl tracking-tight text-slate-900">Nike Air MX Super 2500 - Red</h5>
                 </Link>
-                <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                    About
-                </Link>
-                <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                    Services
-                </Link>
-                <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                    Portfolio
-                </Link>
-                <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                    Contact
-                </Link>
-            </div>
-            <Sheet>
-                <SheetTrigger asChild>
-                    <Button className="lg:hidden" size="icon" variant="outline">
-                        <MenuIcon className="h-6 w-6" />
-                        <span className="sr-only">Toggle navigation menu</span>
-                    </Button>
-                </SheetTrigger>
-                <SheetContent side="left">
-                    <div className="grid w-[200px] p-4">
-                        <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                            Home
-                        </Link>
-                        <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                            About
-                        </Link>
-                        <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                            Services
-                        </Link>
-                        <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                            Portfolio
-                        </Link>
-                        <Link className="text-lg font-medium hover:underline underline-offset-4" href="#">
-                            Contact
-                        </Link>
+                <div className="mt-2 mb-5 flex items-center justify-between">
+                    <p>
+                        <span className="text-3xl font-bold text-slate-900">$449</span>
+                        <span className="text-sm text-slate-900 line-through">$699</span>
+                    </p>
+                    <div className="flex items-center">
+                        <StarIcon className="text-yellow-400" />
+                        <StarIcon className="text-yellow-400" />
+                        <StarIcon className="text-yellow-400" />
+                        <StarIcon className="text-yellow-400" />
+                        <StarIcon className="text-yellow-400" />
+                        <span className="ml-2 text-sm font-semibold text-slate-600">5.0</span>
                     </div>
-                </SheetContent>
-            </Sheet>
+                </div>
+                <Button className="w-full">Add to cart</Button>
+            </div>
         </div>
     )
 }
 
-function MenuIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+function StarIcon(props) {
     return (
         <svg
             {...props}
@@ -74,29 +50,7 @@ function MenuIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
             strokeLinecap="round"
             strokeLinejoin="round"
         >
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-        </svg>
-    )
-}
-
-
-function MountainIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
     )
 }
