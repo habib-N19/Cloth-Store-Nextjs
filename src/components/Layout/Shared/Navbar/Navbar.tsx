@@ -46,8 +46,8 @@ const Navbar = () => {
             link: '/contact'
         }]
     return (
-        <nav className="flex items-center justify-around w-full max-w-7xl mx-auto py-2">
-            <Link className="flex-shrink" href='/'>Logo</Link>
+        <nav className="flex bg-transparent z-10 items-center justify-around w-full max-w-7xl mx-auto py-2">
+            <Link className="flex-shrink z-20" href='/'>Logo</Link>
             <Sheet>
                 <SheetTrigger asChild>
                     <Button className="md:hidden" size="icon" variant="outline">
@@ -75,7 +75,7 @@ const Navbar = () => {
                 <NavigationMenuList>
                     {
                         navItem.map((item, index) => (
-                            <NavigationMenuItem key={index}>
+                            <NavigationMenuItem className="bg-transparent" key={index}>
                                 <Link href={item.link} legacyBehavior passHref>
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         {item.name}
