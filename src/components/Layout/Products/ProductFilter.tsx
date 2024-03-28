@@ -54,7 +54,7 @@ const ProductFilter = () => {
             items: ["20-50", "51-100"],
         },
     });
-    const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+    const onSubmit = (data: z.infer<typeof FormSchema>) => {
         const { items } = data;
 
 

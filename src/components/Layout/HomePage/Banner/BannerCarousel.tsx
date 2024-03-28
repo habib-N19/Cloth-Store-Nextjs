@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import Autoplay from "embla-carousel-autoplay"
 import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
@@ -38,11 +38,7 @@ const BannerCarousel = () => {
                 // setApi={setApi}
                 className="w-full">
                 <CarouselContent className="-ml-2 md:-ml-4 space-x-2">
-                    {/* <BannerCards /> */}
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                    <BannerCards />
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />

@@ -23,12 +23,12 @@ const ProductsPage = () => {
                         Explore the Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </h2>
                 </div>
-                {
+                {/* {
                     Array.from({ length: 20 }).map((_, index) => (
                         <ProductCard key={index}></ProductCard>
                     )
                     )
-                }
+                } */}
             </div>
         </section>
     );

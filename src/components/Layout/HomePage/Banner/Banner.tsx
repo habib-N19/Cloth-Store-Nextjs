@@ -3,7 +3,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import BannerCarousel from "./BannerCarousel"
 
 import { motion } from "framer-motion";
-import React from "react";
+import React, { Suspense } from "react";
 const Banner = () => {
 
     return (
@@ -21,7 +21,9 @@ const Banner = () => {
                 <h1 className='text-5xl mt-0 font-bold'>Welcome to our store</h1>
                 <p className='text-2xl'>Get the best products at the best prices</p>
                 <div className="w-full pt-4 mx-auto">
-                    <BannerCarousel />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <BannerCarousel />
+                    </Suspense>
                 </div>
             </motion.div>
         </AuroraBackground>
