@@ -1,7 +1,9 @@
 import { TProduct } from '@/types';
 import React, { Suspense } from 'react'
 const AllProductsPage = async () => {
-    const res = await fetch(`http://localhost:5000/api/v1/products`);
+    const res = await fetch(`https://clothing-store-server-nu.vercel.app/api/v1/products`, {
+        cache: "no-store",
+    });
     const productsArr = await res.json();
     return (
         <div>

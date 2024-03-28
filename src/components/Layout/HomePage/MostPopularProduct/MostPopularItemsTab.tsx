@@ -9,9 +9,16 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 export async function MostPopularItemsTab() {
-    const res = await fetch('http://localhost:5000/api/v1/products/top-rated-by-category')
+    const res = await fetch('https://clothing-store-server-nu.vercel.app/api/v1/products/top-rated-by-category',
+
+        {
+            next: {
+                revalidate: 30,
+            }
+        }
+    )
     const data: TMostPopularProducts = await res.json()
-    console.log(data);
+    // console.log(data);
     if (!data) {
         return <div>Loading...</div>
     }

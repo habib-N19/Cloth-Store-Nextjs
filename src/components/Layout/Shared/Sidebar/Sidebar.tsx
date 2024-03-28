@@ -11,25 +11,7 @@ const navItem = [
         name: 'All Products',
         link: '/dashboard/all-products'
     }
-    ,
-    {
-        name: 'Products',
-        link: '/products'
-    }
-    ,
-    {
-        name: 'Flash Sale',
-        link: '/flash-sale'
-    }
-    ,
-    {
-        name: 'About Us',
-        link: '/about'
-    },
-    {
-        name: 'Contact Us',
-        link: '/contact'
-    }]
+]
 const Sidebar = () => {
     return (
         <nav className="w-full p-2 mt-4">

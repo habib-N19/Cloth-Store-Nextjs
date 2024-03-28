@@ -7,14 +7,14 @@ const ProductsPage = async ({ searchParams }: { searchParams: any }) => {
     const { category } = searchParams;
     let productsArr: TProducts = [];
     if (category) {
-        console.log(category);
-        const res = await fetch(`http://localhost:5000/api/v1/products/category?category=${category}`);
+        // console.log(category);
+        const res = await fetch(`https://clothing-store-server-nu.vercel.app/api/v1/products/category?category=${category}`);
         productsArr = await res.json();
     } else {
-        const res = await fetch(`http://localhost:5000/api/v1/products`);
+        const res = await fetch(`https://clothing-store-server-nu.vercel.app/api/v1/products`);
         productsArr = await res.json();
     }
-    console.log(productsArr);
+    // console.log(productsArr);
     return (
         <section className="container grid grid-cols-5">
             {/* filter section */}

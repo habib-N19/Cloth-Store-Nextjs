@@ -15,8 +15,18 @@ import { TProduct } from '@/types'
 import { discountFunc } from '@/utils/discountFunc'
 import ProductsImages from '@/components/ReUsableComponents/ProductImgs'
 
+export const generateStaticParams = async () => {
+    const res = await fetch('https://clothing-store-server-nu.vercel.app/api/v1/products/');
+    const products = await res.json();
+    return products.slice(0, 10).map((product: TProduct) => ({
+        productId: product.product_id
+    }));
+}
+
 const ProductDetailsPage = async ({ params }: { params: any }) => {
-    const res = await fetch(`http://localhost:5000/api/v1/products/${params.productId}`);
+    const res = await fetch(`https://clothing-store-server-nu.vercel.app/api/v1/products/${params.productId}`, {
+        cache: "no-store"
+    });
     const product: TProduct = await res.json();
 
     return (

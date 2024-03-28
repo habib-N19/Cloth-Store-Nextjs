@@ -3,7 +3,9 @@ import { TProduct } from '@/types'
 import React from 'react'
 
 const FlashSalePage = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/products/flash-sale/all')
+    const res = await fetch('https://clothing-store-server-nu.vercel.app/api/v1/products/flash-sale/all', {
+        cache: "no-store"
+    })
     const products = await res.json()
 
     return (

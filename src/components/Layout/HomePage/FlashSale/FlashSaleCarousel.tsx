@@ -5,7 +5,7 @@ import FlashSaleCard from './FlashSaleCard';
 import { TProduct, TProducts } from '@/types';
 import ProductCard from '@/components/ReUsableComponents/ProductCard';
 const FlashSaleCarousel = async () => {
-    const res = await fetch("http://localhost:5000/api/v1/products/flash-sale", {
+    const res = await fetch("https://clothing-store-server-nu.vercel.app/api/v1/products/flash-sale", {
         cache: 'force-cache'
     });
     const products: TProducts = await res.json();

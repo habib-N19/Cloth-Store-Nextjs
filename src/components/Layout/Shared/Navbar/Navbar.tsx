@@ -24,12 +24,12 @@ const Navbar = () => {
         },
         {
             name: 'Categories',
-            link: '/categories'
+            link: '/mens-wear'
         }
         ,
         {
-            name: 'Products',
-            link: '/products'
+            name: 'Mens Wear',
+            link: '/mens-wear'
         }
         ,
         {
@@ -43,7 +43,12 @@ const Navbar = () => {
         },
         {
             name: 'Contact Us',
-            link: '/contact'
+            link: '/contact-us'
+        }
+        ,
+        {
+            name: 'Dashboard',
+            link: '/dashboard'
         }]
     return (
         <nav className="flex bg-transparent z-10 items-center justify-around w-full max-w-7xl mx-auto py-2">
