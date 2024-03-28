@@ -1,4 +1,4 @@
-export type Product = {
+export type TProduct = {
 	_id: string;
 	product_id: string;
 	name: string;
@@ -14,4 +14,9 @@ export type Product = {
 	flash_sale: boolean;
 	images: string[];
 };
-export type Products = Product[];
+export type TProducts = TProduct[];
+export type TMostPopularProduct = {
+	category: string;
+	products: TProduct[];
+};
+export type TMostPopularProducts = TMostPopularProduct[];

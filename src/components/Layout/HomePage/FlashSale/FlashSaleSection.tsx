@@ -14,7 +14,7 @@ const FlashSaleSection = () => {
             <div className='mt-6 md:mt-12'>
                 <FlashSaleCarousel />
             </div>
-            <ViewMore url='flash-sale' styles='float-right ' />
+            <ViewMore url='flash-sale/all' styles='float-right ' />
 
         </section>
     )

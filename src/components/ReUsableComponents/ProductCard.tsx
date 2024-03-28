@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
-import { Product } from '@/types';
+import { TProduct } from '@/types';
 
-const ProductCard = ({ product }: { product: Product }) => {
+const ProductCard = ({ product }: { product: TProduct }) => {
     return (
-        <Card className="w-full h-96 bg-transparent">
+        <Card className=" h-96 bg-transparent">
             <CardContent className=" aspect-square relative p-0">
                 <Link href={`/mens-wear/${product?.product_id}`}>
                     <Image

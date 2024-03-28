@@ -31,49 +31,44 @@ export function TopCategoryItems() {
 const Skeleton = () => (
     <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   border border-transparent dark:border-white/[0.2] ">
         <CardContent className=" aspect-square relative p-0">
-            <Link href='/' className="w-full">
-                <Image
-                    className="h-fit rounded"
-                    src='https://i.ibb.co/HCzcDs2/image.png'
-                    alt='img'
-                    height={200}
-                    width={400}
-                />
-            </Link>
-
-            <Badge className="absolute top-0 left-0">
-                39% OFF
-            </Badge>
-
+            <Image
+                className="h-fit rounded"
+                src='https://i.ibb.co/HCzcDs2/image.png'
+                alt='img'
+                height={200}
+                width={400}
+            />
         </CardContent>
     </div>
 );
-const items = [
+const items = [git 
     {
-        title: "The Dawn of Innovation",
-        description: "Explore the birth of groundbreaking ideas and inventions.",
+        title: <Link href='/mens-wear?category=Hoodies'>Hoodies</Link>,
+        description: "Explore the top trending hoodies.",
         header: <Skeleton />,
         className: "md:col-span-2",
         icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     },
     {
-        title: "The Digital Revolution",
-        description: "Dive into the transformative power of technology.",
+
+        title: <Link href='/mens-wear?category=Jackets'>Jackets</Link>,
+        description: "Discover the latest jackets for all seasons.",
         header: <Skeleton />,
         className: "md:col-span-1",
         icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     },
     {
-        title: "The Art of Design",
-        description: "Discover the beauty of thoughtful and functional design.",
+
+        title: <Link href='/mens-wear?category=Jeans'>Jeans</Link>,
+        description: "Find the perfect pair of jeans for you",
         header: <Skeleton />,
         className: "md:col-span-1",
         icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     },
     {
-        title: "The Power of Communication",
+        title: <Link href='/mens-wear?category=Polo Shirts'>Polo Shirts</Link>,
         description:
-            "Understand the impact of effective communication in our lives.",
+            "Shop the best polo shirt brands in the world.",
         header: <Skeleton />,
         className: "md:col-span-2",
         icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,

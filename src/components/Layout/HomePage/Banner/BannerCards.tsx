@@ -1,16 +1,15 @@
 import ProductCard from "@/components/ReUsableComponents/ProductCard";
-import { Product, Products } from "@/types";
+import { TProduct, TProducts } from "@/types";
 import React, { Suspense } from "react";
 const BannerCards = async () => {
     const data = await fetch("http://localhost:5000/api/v1/products/latest", {
         cache: 'force-cache'
     });
-    const product: Products = await data.json();
-    console.log('hello');
-    console.log(product);
+    const products: TProducts = await data.json();
+
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            {product?.map((product: Product, index) => (
+            {products?.map((product: TProduct, index: React.Key | null | undefined) => (
                 <ProductCard key={index} product={product} />
             ))}
         </Suspense>
