@@ -41,7 +41,7 @@ const Skeleton = () => (
         </CardContent>
     </div>
 );
-const items = [git 
+const items = [
     {
         title: <Link href='/mens-wear?category=Hoodies'>Hoodies</Link>,
         description: "Explore the top trending hoodies.",
@@ -66,6 +66,7 @@ const items = [git
         icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     },
     {
+
         title: <Link href='/mens-wear?category=Polo Shirts'>Polo Shirts</Link>,
         description:
             "Shop the best polo shirt brands in the world.",

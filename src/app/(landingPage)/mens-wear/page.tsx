@@ -1,10 +1,14 @@
 import { ProductCategory } from "@/components/Layout/Products/ProductCategory";
 import ProductFilter from "@/components/Layout/Products/ProductFilter";
-import ProductCard from "@/components/ReUsableComponents/ProductCard";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import React from "react";
-
-const ProductsPage = () => {
+const ProductsPage = async ({ searchParams }: { searchParams: any }) => {
+    const { category } = searchParams;
+    if (category) {
+        console.log(category);
+        const res = await fetch(`http://localhost:5000/api/v1/products/category?category=${category}`);
+        const products = await res.json();
+        console.log(products);
+    }
     return (
         <section className="container grid grid-cols-5">
             {/* filter section */}
