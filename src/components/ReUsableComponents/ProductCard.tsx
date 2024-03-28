@@ -23,7 +23,7 @@ const ProductCard = ({ product }: { product: TProduct }) => {
                 </Link>
 
                 <Badge className="absolute top-0 left-0">
-                    39% OFF
+                    25% OFF
                 </Badge>
 
             </CardContent>
@@ -35,7 +35,7 @@ const ProductCard = ({ product }: { product: TProduct }) => {
                 <div className=" flex items-center  gap-1 justify-between">
                     <p>
                         <span className="text-lg mr-1 font-bold ">${discountFunc(product?.price)}</span>
-                        <span className="text-sm text-secondary line-through">${product?.price}</span>
+                        <span className="text-sm text-red-500 line-through">${product?.price}</span>
                     </p>
                     <div className="flex items-center">
                         <StarFilledIcon className="text-yellow-400" />
