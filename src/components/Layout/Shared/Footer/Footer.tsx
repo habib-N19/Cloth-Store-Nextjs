@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import React from 'react'
+
 
 const Footer = () => {
     return (
@@ -13,10 +15,22 @@ const Footer = () => {
                 <div className='col-span-1'>
                     <h1 className='text-2xl font-bold'>Quick Links</h1>
                     <ul className='mt-4'>
-                        <li>Home</li>
-                        <li>Shop</li>
-                        <li>Categories</li>
-                        <li>Flash Sale</li>
+                        <li><Link href='/'>
+
+                            Home
+                        </Link>
+                        </li>
+                        <li><Link href='/mens-wear'>
+                            Trending Products</Link></li>
+                        <li><Link href='/mens-wear'>
+                            Category</Link></li>
+                        <li><Link href='/about'>
+                            About Us</Link></li>
+                        <li><Link href='/contact-us'>
+                            Contact Us</Link></li>
+                        <li><Link href='/customer-care'>
+                            Customer Care</Link></li>
+
                     </ul>
                 </div>
                 <div className='col-span-1'>
@@ -42,9 +56,9 @@ const Footer = () => {
                 </div>
             </div>
             {/* bottom footer */}
-            {/* <div className='divide-solid'></div> */}
-            <div className='pt-6'>
-                <p className='text-center'>© 2021 All Rights Reserved. Designed by <span className='text-blue-500'>ABC</span></p>
+
+            <div className='pt-6 pb-3'>
+                <p className='text-center'>© {new Date().getFullYear()} All Rights Reserved. Designed by <span className='text-blue-500'></span></p>
             </div>
 
 
