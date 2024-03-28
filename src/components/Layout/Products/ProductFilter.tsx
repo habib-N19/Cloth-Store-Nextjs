@@ -15,8 +15,6 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
-
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
     IconFilter,
@@ -24,6 +22,7 @@ import {
     IconFilterDollar,
     IconFilterSearch,
 } from "@tabler/icons-react";
+import { filterAction } from "./FilterAction";
 const items = [
     {
         id: "20-50",
@@ -48,26 +47,22 @@ const FormSchema = z.object({
     }),
 });
 const ProductFilter = () => {
+    // const router = useRouter();
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
             items: ["20-50", "51-100"],
         },
     });
-    const onSubmit = (data: z.infer<typeof FormSchema>) => {
-        toast({
-            title: "You submitted the following values:",
-            description: (
-                <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-                    <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-                </pre>
-            ),
-        });
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+        const { items } = data;
+
+
+
     };
 
     return (
-        <Card className="p-2 max-w-56 w-full">
+        <Card className="p-2 max-w-56n w-full">
             <CardTitle className="border-l-4 hover:border-l-blue-200 transition-all pl-1 text-xl font-bold">
                 Price Range
             </CardTitle>
@@ -125,7 +120,7 @@ const ProductFilter = () => {
                     </form>
                 </Form>
             </CardContent>
-        </Card>
+        </Card >
     );
 };
 

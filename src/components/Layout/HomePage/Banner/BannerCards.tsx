@@ -13,7 +13,7 @@ const BannerCards = async () => {
     console.log(product);
     return (
         <>
-            {product.map((product) => (
+            {product.map((product: any) => (
                 <CarouselItem
                     key={product.id}
                     className="pl-1 md:basis-1/2 lg:basis-1/3 "

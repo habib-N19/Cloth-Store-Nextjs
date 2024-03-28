@@ -1,5 +1,6 @@
 import { ProductCategory } from "@/components/Layout/Products/ProductCategory";
 import ProductFilter from "@/components/Layout/Products/ProductFilter";
+import ProductCard from "@/components/ReUsableComponents/ProductCard";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import React from "react";
 
@@ -22,8 +23,12 @@ const ProductsPage = () => {
                         Explore the Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </h2>
                 </div>
-                <Card>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quidem exercitationem cum reprehenderit atque id inventore ipsum repudiandae fugiat soluta! Eaque dicta voluptatibus, sapiente excepturi et quidem laborum iusto perferendis.</Card>
+                {
+                    Array.from({ length: 20 }).map((_, index) => (
+                        <ProductCard key={index}></ProductCard>
+                    )
+                    )
+                }
             </div>
         </section>
     );
