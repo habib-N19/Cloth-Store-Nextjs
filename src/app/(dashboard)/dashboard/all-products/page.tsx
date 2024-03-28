@@ -1,9 +1,40 @@
-import { AllProducts } from '@/components/Layout/Dashboard/AllProducts/AllProducts'
-import React from 'react'
 
-const AllProductsPage = () => {
+import React, { Suspense } from 'react'
+
+const AllProductsPage = async () => {
+    const res = await fetch(`http://localhost:5000/api/v1/products`);
+    const productsArr = await res.json();
     return (
-        <div><AllProducts /></div>
+        <div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <table className="table-auto w-full">
+                    <thead>
+                        <tr>
+                            <th className="px-4 py-2">Product Name</th>
+                            <th className="px-4 py-2">Price</th>
+                            <th className="px-4 py-2">Category</th>
+                            <th className="px-4 py-2">Stock</th>
+                            <th className="px-4 py-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {productsArr.map((product: any) => (
+                            <tr key={product._id}>
+                                <td className="border px-4 py-2">{product.name}</td>
+                                <td className="border px-4 py-2">{product.price}</td>
+                                <td className="border px-4 py-2">{product.category}</td>
+                                <td className="border px-4 py-2">{product.stock}</td>
+                                <td className="border px-4 py-2">
+                                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                {/* <AllProducts data={productsArr} /> */}
+            </Suspense>
+        </div>
     )
 }
 

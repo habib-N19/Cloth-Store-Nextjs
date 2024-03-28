@@ -20,3 +20,11 @@ export type TMostPopularProduct = {
 	products: TProduct[];
 };
 export type TMostPopularProducts = TMostPopularProduct[];
+export type TAllProduct = {
+	name: string;
+	product_id: string;
+	price: string;
+	rating: string;
+	category: string;
+	images: string[];
+};
