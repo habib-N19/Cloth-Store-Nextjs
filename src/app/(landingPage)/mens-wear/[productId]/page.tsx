@@ -1,4 +1,4 @@
-'use client'
+
 import React, { useState } from 'react'
 import { DividerHorizontalIcon, SlashIcon, StarFilledIcon, StarIcon } from "@radix-ui/react-icons"
 
@@ -11,9 +11,14 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { Separator } from '@/components/ui/separator'
+import { TProduct } from '@/types'
+import { discountFunc } from '@/utils/discountFunc'
+import ProductsImages from '@/components/ReUsableComponents/ProductImgs'
 
-const ProductDetailsPage = () => {
-    const [image, setImage] = useState(1);
+const ProductDetailsPage = async ({ params }: { params: any }) => {
+    const res = await fetch(`http://localhost:5000/api/v1/products/${params.productId}`);
+    const product: TProduct = await res.json();
+
     return (
         <section className='container mt-6'>
             <Breadcrumb>
@@ -31,47 +36,29 @@ const ProductDetailsPage = () => {
                         <SlashIcon />
                     </BreadcrumbSeparator>
                     <BreadcrumbItem>
-                        <BreadcrumbPage>Product</BreadcrumbPage>
+                        <BreadcrumbPage>{product.name}</BreadcrumbPage>
                     </BreadcrumbItem>
                 </BreadcrumbList>
             </Breadcrumb>
             {/* product image and detail container */}
             <div className='grid grid-cols-1 mt-6  w-full md:grid-cols-3'>
                 <div className="border col-span-2 p-2">
-                    <div className="md:flex-1 px-4">
-                        <div className="h-64 md:h-80 rounded-lg bg-primary-foreground mb-4">
-                            <div className="h-64 md:h-80 rounded-lg bg-primary-foreground mb-4 flex items-center justify-center">
-                                <span className="text-5xl">{image}</span>
-                            </div>
-                        </div>
-                        <div className="flex -mx-2 mb-4">
-                            {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="flex-1 px-2">
-                                    <button
-                                        onClick={() => setImage(i)}
-                                        className={`focus:outline-none w-full rounded-lg h-24 md:h-32 bg-primary-foreground flex items-center justify-center ${image === i ? 'ring-2  ring-inset' : ''
-                                            }`}
-                                    >
-                                        <span className="text-2xl">{i}</span>
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <ProductsImages images={product?.images} />
                 </div>
                 <div className="col-span-1 border p-2">
                     <div className="md:flex-1 px-4">
-                        <h2 className="mb-2 leading-tight tracking-tight font-bold  text-xl md:text-2xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>
+                        <h2 className="mb-2 leading-tight tracking-tight font-bold  text-xl md:text-2xl">{product?.name}</h2>
 
                         <div className="flex items-center space-x-4 my-4">
                             <div>
                                 <div className="rounded-lg border bg-primary-foreground flex py-2 px-3">
-                                    <span className=" mr-1 mt-1">$</span>
-                                    <span className="font-bold text-3xl">25</span>
+                                    <span className="text-lg mr-1 font-bold ">${discountFunc(product?.price)}</span>
+                                    <span className="text-sm text-red-600 line-through">${product?.price}</span>
+
                                 </div>
                             </div>
                             <div className="flex-1">
-                                <p className=" text-xl font-semibold">Save 12%</p>
+                                <p className=" text-xl font-semibold">Save 25%</p>
                                 <p className="text-gray-400 text-sm">Inclusive of all Taxes.</p>
                             </div>
                         </div>
@@ -81,10 +68,10 @@ const ProductDetailsPage = () => {
                             <StarFilledIcon />
                             <StarFilledIcon />
                             <StarFilledIcon />
-                            <span className='ml-2'>({'10 reviews'})</span>
+                            <span className='ml-2'>({product?.ratings?.count} reviews)</span>
                         </div>
                         <Separator className='my-2' />
-                        <p className="text-gray-500">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.</p>
+                        <p className="text-gray-500">{product?.short_description}</p>
                         {/* <div className="flex py-4 space-x-4">
                             <div className="relative">
                                 <div className="text-center left-0 pt-2 right-0 absolute block text-xs uppercase tracking-wide font-semibold">Qty</div>
@@ -107,17 +94,10 @@ const ProductDetailsPage = () => {
             {/* product description details */}
             <div className='mt-6 md:mt-12'>
                 <h3>Description</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem repudiandae laboriosam delectus eos cumque dolor quisquam autem, qui facilis, dignissimos eligendi provident, quis natus. Voluptates odit reprehenderit ex placeat corporis. Magni aut voluptatem ipsa quam consequatur labore nihil voluptates dolore delectus excepturi modi repellendus tempore vero perspiciatis impedit expedita, numquam dignissimos ad? Quo esse dolores aspernatur adipisci? Odio, ea ducimus?</p>
-                <ul>
-                    {
+                <p>{product?.long_description}</p>
 
-                        Array.from({ length: 5 }).map((_, i) => (
-                            <li key={i}>Lorem ipsum dolor sit.</li>
-                        ))
-                    }
-                </ul>
             </div>
-        </section>
+        </section >
     )
 }
 

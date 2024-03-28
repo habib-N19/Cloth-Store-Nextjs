@@ -6,10 +6,11 @@ import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
 import { TProduct } from '@/types';
+import { discountFunc } from '@/utils/discountFunc';
 
 const ProductCard = ({ product }: { product: TProduct }) => {
     return (
-        <Card className=" h-96 bg-transparent">
+        <Card className="w-full h-96 bg-transparent">
             <CardContent className=" aspect-square relative p-0">
                 <Link href={`/mens-wear/${product?.product_id}`}>
                     <Image
@@ -33,8 +34,8 @@ const ProductCard = ({ product }: { product: TProduct }) => {
                 </Link>
                 <div className=" flex items-center  gap-1 justify-between">
                     <p>
-                        <span className="text-lg mr-1 font-bold ">${product?.price}</span>
-                        <span className="text-sm text-secondary line-through">${product?.price - product?.price * 35 / 100}</span>
+                        <span className="text-lg mr-1 font-bold ">${discountFunc(product?.price)}</span>
+                        <span className="text-sm text-secondary line-through">${product?.price}</span>
                     </p>
                     <div className="flex items-center">
                         <StarFilledIcon className="text-yellow-400" />
@@ -45,7 +46,7 @@ const ProductCard = ({ product }: { product: TProduct }) => {
                         <span className="ml-2 text-sm font-semibold">{product?.ratings?.rating}</span>
                     </div>
                 </div>
-                <Button className="aria-disabled: w-full disabled:">Add to cart</Button>
+                <Button className="aria-disabled: w-fit disabled:">Add to cart</Button>
             </div></CardFooter>
         </Card >
     );

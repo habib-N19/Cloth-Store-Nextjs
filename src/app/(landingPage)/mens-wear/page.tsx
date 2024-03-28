@@ -1,14 +1,20 @@
 import { ProductCategory } from "@/components/Layout/Products/ProductCategory";
 import ProductFilter from "@/components/Layout/Products/ProductFilter";
+import ProductCard from "@/components/ReUsableComponents/ProductCard";
+import { TProduct, TProducts } from "@/types";
 import React from "react";
 const ProductsPage = async ({ searchParams }: { searchParams: any }) => {
     const { category } = searchParams;
+    let productsArr: TProducts = [];
     if (category) {
         console.log(category);
         const res = await fetch(`http://localhost:5000/api/v1/products/category?category=${category}`);
-        const products = await res.json();
-        console.log(products);
+        productsArr = await res.json();
+    } else {
+        const res = await fetch(`http://localhost:5000/api/v1/products`);
+        productsArr = await res.json();
     }
+    console.log(productsArr);
     return (
         <section className="container grid grid-cols-5">
             {/* filter section */}
@@ -27,12 +33,12 @@ const ProductsPage = async ({ searchParams }: { searchParams: any }) => {
                         Explore the Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </h2>
                 </div>
-                {/* {
-                    Array.from({ length: 20 }).map((_, index) => (
-                        <ProductCard key={index}></ProductCard>
+                {
+                    productsArr?.map((product: TProduct, index) => (
+                        <ProductCard key={index} product={product}></ProductCard>
                     )
                     )
-                } */}
+                }
             </div>
         </section>
     );
