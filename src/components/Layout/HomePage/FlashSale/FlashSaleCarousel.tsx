@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import FlashSaleCard from './FlashSaleCard';
 import { TProduct, TProducts } from '@/types';
 import ProductCard from '@/components/ReUsableComponents/ProductCard';
 const FlashSaleCarousel = async () => {

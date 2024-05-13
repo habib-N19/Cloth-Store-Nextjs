@@ -1,27 +1,36 @@
-This is a [Clothing Store](https://nextjs.org/)
+## This is a Nextjs Based E-commerce Project
 
-## Getting Started
+Here is the live link of the project: [Mens Wear](https://menswear-one.vercel.app//)
+Here is the backend repository of the project: [Backend](https://github.com/habib-N19/cloth-store-server)
 
-First, run the development server:
+### Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- User can see all the products
+- User can add products to the cart
+- User can see the cart
+- User can remove products from the cart
+- User can see the total price of the products in the cart
+- User can see the total quantity of the products in the cart
+- User can see the total price of the products in the cart
+- User can see the total quantity of the products in the cart
+- User can see the total price of the products in the cart
+- User can see the total quantity of the products in the cart
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Technologies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Nextjs
+- React
+- Redux Toolkit
+- Tailwind
+- Typescript
+- RTK Query
+- Node
+- Express
+- MongoDB
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Clone the repository
+- Run `npm install`
+- Run `npm run dev`
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

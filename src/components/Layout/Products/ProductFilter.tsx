@@ -22,7 +22,6 @@ import {
     IconFilterDollar,
     IconFilterSearch,
 } from "@tabler/icons-react";
-import { filterAction } from "./FilterAction";
 const items = [
     {
         id: "20-50",
